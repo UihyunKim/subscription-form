@@ -1,0 +1,22 @@
+body {
+  height: 100vh;
+}
+
+body .container {
+  height: 60%;
+  max-width: 100%;
+  width: 70%;
+}
+
+body .container .main-img {
+  background-image: url("../img/background-img.JPG");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 7px 0 0 7px;
+}
+
+body .container .form-container {
+  border-radius: 0 7px 7px 0;
+}
+/*# sourceMappingURL=style.css.map */
