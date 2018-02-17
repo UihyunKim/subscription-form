@@ -1,4 +1,14 @@
 <?php
+    session_start();
+
+    $session_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+    $session_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
+    $session_email = isset($_SESSION['email']) ? $_SESSION['email'] : 'Unsubscribed';
+    $session_time = isset($_SESSION['time']) ? $_SESSION['time'] : null;
+
+?>
+
+<?php
     $host = 'localhost';
     $user = 'root';
     $password = '123456';
@@ -11,8 +21,15 @@
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
-    // PDO Query
-    // $stmt = $pdo->query('SELECT * FROM accounts');
+    ?>
+
+<?php
+    // Dynamic contents
+    // current page name (e.g, sign-up, log-in..)
+    $currentPage = basename($_SERVER["SCRIPT_FILENAME"], '.php');
+
+    // main text on each images
+
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +49,10 @@
         <div class="row h-100">
 
             <!-- left main colon - Background image-->
-            <div class="col-lg-8 main-img">
-                <h1>Get feeling up with wonderful pics!</h1>
-                <h2>We deliver most inspired photos to make your bothered mail box happy.</h2>
+            <div class="col-lg-8 main-img d-flex <?php echo $currentPage; ?>">
+                <div class="align-self-center">
+                    <h1>Daily Photo</h1>
+                </div>
             </div>
 
             <!-- right main colon - Forms -->

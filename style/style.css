@@ -1,19 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Pacifico");
 body {
   height: 100vh;
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Pacifico", cursive;
+}
+
+body p {
+  font-family: "Oswald", sans-serif;
 }
 
 body .container {
   height: 60%;
   max-width: 100%;
-  width: 70%;
+  width: 60%;
 }
 
 body .container .main-img {
-  background-image: url("../img/background-img.JPG");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 7px 0 0 7px;
+}
+
+body .container .sign-up {
+  background-image: url("https://lh3.googleusercontent.com/2D43jv0AXO3F6QbmABQhC5SGO8p9OtoS_c0Z0wal2g5BVwsHQCPd-clo7_0mc5-KRE3cHcHG1dQNINqvWWMl31X6CLRoW2_FHNARAL3zD7z9WQLXhyRWXjeXNs8MFiSYgbuAw13xHkaqSJIqF1eszF6BQPycgMuMTT-SdlQBjQeH6rXMlbIaWX51NH-Q3Fz9Dwblq8yiqFY7g1zgbam_oaPRhbRLMBfB8AJ783ud0LNl7F-ZGCXflELuwpsD7UL7fW9Y2dtWYEhBC92drrCt0n5TzKJbdTRXZcMxthJ_NTraELsp9N_ba5dYdAPVQ38SOF3q_SC8cP8Ekw3vSZe_vnhUev1lJnWeSEmzmNAO3GW3TX0Y-HjysonDeLM7vcrGpV9urdqs10Tpzcsj91DSQvMKH3j9Fz4XfbJZ3_T_Ox6Dek27QKiwxDvgb4CyTHwRkTKB5km4J7mLdQrTffP2SorXSgfQ9XBhmN2Q6652p3rjL0IFDhSwRP0ugNiE6jk8MTOx7Ecd6d9EWORZBThud2wRrH1CR0HZ3es3z-lA70PKpYRhFAQduRoUlzEu7veFYOMklZhDrJKykDMV-W4AtWVJYXOJ-ZYDnSAKcP6b=w1480-h990-no");
+}
+
+body .container .log-in {
+  background-image: url("../img/background-img.JPG");
 }
 
 body .container .form-container {
