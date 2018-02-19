@@ -97,7 +97,7 @@
                     class="form-control"
                     value="<?php echo isset($email) ? $email : ''; ?>" 
                     required>
-            <div    class="invalid-feedback">Please use valid email</div>
+            <div    class="invalid-feedback">Please fill valid email</div>
         </div>
         <div class="form-group password">
             <input  type="password" 
@@ -117,7 +117,7 @@
         </div>
         <div class="form-group row">
             <label  for="selectTime" 
-                    class="col-sm-8 col-form-label">Receive photos by</label>
+                    class="col-sm-8 col-form-label">Receive photos every</label>
             <div    class="col-sm-4">
                 <select name="time" 
                         id="selectTime" 

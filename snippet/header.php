@@ -56,5 +56,5 @@
             </div>
 
             <!-- right main colon - Forms -->
-            <div class="col-lg-4 bg-white form-container pt-lg-3">
+            <div class="col-lg-4 bg-white form-container pt-lg-3 d-flex flex-column">
             

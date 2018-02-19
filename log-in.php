@@ -44,7 +44,9 @@
 
                     header('Location: ./log-in-welcome.php');
                 } else {
-                    echo "Login failed";
+                    // echo "Login failed";
+                    $msg = 'Email and password do not match.';
+                    $msgClass = 'alert-danger';
                 }
             }
         } else {
@@ -69,13 +71,13 @@
         novalidate>
 
         <div class="form-group email">
-            <input  type="text" 
+            <input  type="email" 
                     name="email" 
                     placeholder="email"
                     class="form-control" 
                     value="<?php echo isset($email) ? $email : ''; ?>" 
                     required>
-            <div    class="invalid-feedback">Please use valid email</div>
+            <div    class="invalid-feedback">Please fill valid email</div>
         </div>
         <div class="form-group password">
             <input  type="password" 

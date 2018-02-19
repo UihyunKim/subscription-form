@@ -1,6 +1,9 @@
 <?php include './snippet/header.php'; ?>
 
 <?php
+    $msg = '';
+    $msgClass = '';
+
     // update account
     if (isset($_POST['edit'])) {
 
@@ -48,28 +51,9 @@
             }
             
             else {
-                // Check email and password
-                $sql = 'SELECT * FROM accounts WHERE email = ?';
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute([$email]);
-                $user = $stmt->fetch();
-
-                // var_dump($user);
-                // echo "$user->name<br>";
-                // echo "$user->email<br>";
-                // echo "$user->time<br>";
-                // echo "$user->pw<br>";
-
-                if (password_verify($pw, $user->pw)) {
-                    // login success
-                    $_SESSION['name'] = $user->name;
-                    $_SESSION['email'] = $user->email;
-                    $_SESSION['time'] = $user->time;
-
-                    header('Location: ./log-in-welcome.php');
-                } else {
-                    echo "Login failed";
-                }
+                // Nothing changed
+                $msg = 'Nothing changed';
+                $msgClass = 'alert-danger';
             }
         }
         
@@ -97,51 +81,74 @@
 
 
 <?php if ($session_name !== 'Guest'): ?>
+    <h2>Edit account info</h2>
 
-    <h1>Edit account info</h1>
+    <?php if ($msg != ''): ?>
+        <div class="alert <?php echo $msgClass ?>"><?php echo $msg; ?></div>
+    <?php endif; ?>
 
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+    <div class="edit-form-container">
+        <!-- Edit form -->
+        <form   action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" 
+                method="post"
+                class="needs-validation sign-up-form mt-sm-3" 
+                novalidate>
 
-        <input  type="text" name="name" placeholder="name"
-                value="<?php echo isset($session_name) ? $session_name : ''; ?>" >
-        <br>
-    
-        <p>Receive great photo by</p>
-        <?php echo "$session_time<br>" ?>
-<!--     
-        <input type="radio" name="time" value="day"
-            <?php echo $session_time === 'day' ? 'checked' : 'no'; ?>
-            >Day<br>
-        <input type="radio" name="time" value="week"
-            <?php echo $session_time === 'week' ? 'checked' : ''; ?>
-            >Week<br>
-        <input type="radio" name="time" value="month"
-            <?php echo $session_time === 'month' ? 'checked' : ''; ?>
-            >Month<br>
-        <input type="radio" name="time" value="random"
-            <?php echo $session_time === 'random' ? 'checked' : ''; ?>
-            >Random<br> -->
-
-        <select name="time" class="form-control form-control-sm">
-            <option value="day" <?php echo $session_time === 'day' ? 'selected' : ''; ?>>Day</option>
-            <option value="week" <?php echo $session_time === 'week' ? 'selected' : ''; ?>>Week</option>
-            <option value="month" <?php echo $session_time === 'month' ? 'selected' : ''; ?>>Month</option>
-            <option value="random"<?php echo $session_time === 'random' ? 'selected' : ''; ?>>Random</option>
-        </select>
+            <div class="form-group row">
+                <label  for="name" 
+                        class="col-sm-4 col-form-label">name</label>
+                <div class="col-sm-8">
+                    <input  type="text"
+                            id="name" 
+                            name="name" 
+                            placeholder="name"
+                            class="form-control"
+                            value="<?php echo isset($session_name) ? $session_name : ''; ?>" 
+                            required>
+                </div>
+                <div    class="invalid-feedback col-sm-12">Please fill name</div>
+            </div>
         
-        <input type="submit" name="edit" value="Edit">
-        
-    </form>
+            <div class="form-group row">
+                <label  for="selectTime" 
+                        class="col-sm-8 col-form-label">Receive photos every</label>
+                <div    class="col-sm-4">
+                    <select name="time" 
+                            id="selectTime" 
+                            class="form-control" >
+                        <option value="day" <?php echo $session_time === 'day' ? 'selected' : ''; ?>>Day</option>
+                        <option value="week" <?php echo $session_time === 'week' ? 'selected' : ''; ?>>Week</option>
+                        <option value="month" <?php echo $session_time === 'month' ? 'selected' : ''; ?>>Month</option>
+                        <option value="random" <?php echo $session_time === 'random' ? 'selected' : ''; ?>>Random</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <input  type="submit" 
+                        name="edit" 
+                        value="Edit" 
+                        class="btn btn-primary col">
+            </div>
+        </form>
+    </div>
 
-    <h1>Delete account</h1>
-    <!-- <p>Do you want to delete this account?(Can't going back)</p> -->
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-        <input type="submit" name="delete" value="Delete">
-    </form>
+    <!-- Delete form -->
+    <div class="delete-form-container mt-auto">
+        <h2>Delete account</h2>
+        <!-- <p>Do you want to delete this account?(Can't going back)</p> -->
+        <form   action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
+                method="post">
+            <div class="form-group">
+                <input type="submit" name="delete" value="Delete" class="btn btn-danger col">
+            </div>
+        </form>
+    </div>
 
-    <p><a href="./index.php">Home</a></p>
-    <p><a href="./log-out.php">Log out</a></p>
-
+    <!-- Links -->
+    <div class="link-container mt-auto d-flex justify-content-around">
+        <p><a href="./index.php">Home</a></p>
+        <p><a href="./log-out.php" class="text-danger">Log out</a></p>
+    </div>
 <?php else: ?>
 
     <?php header('Location: ./index.php'); ?>

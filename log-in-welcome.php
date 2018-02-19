@@ -1,29 +1,28 @@
 <?php include './snippet/header.php'; ?>
 
 <?php if ($session_name !== 'Guest'): ?>
-    <h1>Hello, <?php echo $session_name ?></h1>
+    <h2>Hello, <?php echo ucfirst($session_name) ?></h2>
 
-    <h2>account info</h2>
+    <h3 class=mt-md-3>account info</h3>
 
-    <div>
-        <h4>id</h3>
-        <h3><?php echo $session_id ?></h4>
+    <div class="row mt-md-3">
+        <h4 class="col-sm-4">name</h4>
+        <h5 class="col-sm-8"><?php echo $session_name ?></h5>
     </div>
-    <div>
-        <h4>name</h3>
-        <h3><?php echo $session_name ?></h4>
+    <div class="row">
+        <h4 class="col-sm-4">email</h4>
+        <h5 class="col-sm-8"><?php echo $session_email ?></h5>
     </div>
-    <div>
-        <h4>email</h3>
-        <h3><?php echo $session_email ?></h4>
-    </div>
-    <div>
-        <h4>time</h3>
-        <h3><?php echo $session_time ?></h4>
+    <div class="row">
+        <h4 class="col-sm-4">every</h4>
+        <h5 class="col-sm-8"><?php echo $session_time ?></h5>
     </div>
 
-    <p><a href="./edit.php">edit</a></p>
-    <p><a href="./log-out.php">Log out</a></p>
+    <div class="row mt-auto">
+        <p class="col text-center"><a href="./edit.php" class="">edit</a></p>
+        <p class="col text-center"><a href="./view-members.php" class="">members</a></p>
+        <p class="col text-center"><a href="./log-out.php" class="text-danger">Log out</a></p>
+    </div>
 <?php else: ?>
     <?php header('Location: ./index.php'); ?>
 <?php endif ?>

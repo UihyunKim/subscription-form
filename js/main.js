@@ -2,6 +2,13 @@ function checkPwConfirm() {
   var pw = $('.password input').val();
   var pwConfirm = $('.password-confirm input').val();
 
+  console.log(pwConfirm);
+
+  // pwConfirm only exist in signup page
+  if (pwConfirm === undefined) {
+    return true;
+  }
+
   if (pwConfirm && pw === pwConfirm) {
     $('.password-confirm input').css('border-color', '#28a745');
     // $('.password-confirm input:focus').css('box-shadow', '0 0 0 0.2rem rgba(40,167,69,.25)');
@@ -19,8 +26,10 @@ function checkPwConfirm() {
 (function () {
   'use strict';
   window.addEventListener('load', function () {
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
+
     // Loop over them and prevent submission
     var validation = Array
       .prototype
@@ -38,6 +47,8 @@ function checkPwConfirm() {
 
             // password-confirm works independently!!
             checkPwConfirm();
+
+            console.log(checkPwConfirm);
 
           }, false);
 

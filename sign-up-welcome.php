@@ -2,10 +2,10 @@
 
 <?php if ($session_name !== 'Guest'): ?>
     <!-- Success Sign Up -->
-    <h1>Thank <?php echo "$session_name"; ?> for sign up!</h1>
-    <h2>Great photos are delivered to <?php echo $session_email; ?>
+    <h2>Welcome, <?php echo ucfirst("$session_name"); ?></h2>
+    <h3>Great photos are delivered to <?php echo $session_email; ?></h3>
 
-    <div>
+    <div class="mt-auto">
         <h3><a href="./view-members.php">View our members</a></h3>
     </div>
 <?php else: ?>
