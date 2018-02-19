@@ -1,4 +1,8 @@
 <?php
+    echo "Heroku deployed";
+?>
+
+<?php
     session_start();
 
     $session_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
