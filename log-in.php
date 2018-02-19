@@ -57,19 +57,42 @@
 
 <?php if ($session_name === 'Guest'): ?>
     <!-- Render Login page -->
-    <h1>Daily Photo<br>Log in </h1>
+    <h2>Log in </h2>
 
     <?php if ($msg != ''): ?>
         <div class="alert <?php echo $msgClass ?>"><?php echo $msg; ?></div>
     <?php endif; ?>
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-        <input  type="text" name="email" placeholder="email"
-                value="<?php echo isset($email) ? $email : ''; ?>" >
-        <br>
-        <input  type="password" name="pw" placeholder="password">
-        <br>
+    <form 
+        action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" 
+        method="post"
+        class="needs-validation log-in-form mt-sm-3"
+        novalidate>
 
-        <input type="submit" name="log-in" value="Log In">
+        <div class="form-group email">
+            <input  type="text" 
+                    name="email" 
+                    placeholder="email"
+                    class="form-control" 
+                    value="<?php echo isset($email) ? $email : ''; ?>" 
+                    required>
+            <div    class="invalid-feedback">Please use valid email</div>
+        </div>
+        <div class="form-group password">
+            <input  type="password" 
+                    name="pw" 
+                    class="form-control" 
+                    placeholder="password"
+                    required
+                    minlength=4 >
+            <div    class="invalid-feedback">Required 4 characters minimum</div>
+        </div>
+
+        <div class="form-group">
+            <input  type="submit" 
+                    name="log-in" 
+                    value="Log In" 
+                    class="btn btn-primary col">
+        </div>
     </form>
 
     <div><p>Back to <a href="./index.php">Sign up</a></p></div>

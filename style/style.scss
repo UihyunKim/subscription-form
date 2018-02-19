@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Pacifico');
 
 $pacifico: 'Pacifico', cursive;
+$open-sans: 'Open Sans', sans-serif;
 $oswald: 'Oswald', sans-serif;
 
 body {
   h1, h2, h3, h4, h5, h6 {
-    font-family: $pacifico;
+    font-family: $open-sans;
   }
 
   p {
@@ -25,6 +26,10 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 7px 0 0 7px;
+
+      h1 {
+        font-family: $pacifico;
+      }
     }
     
     // image by page

@@ -108,7 +108,7 @@
     
         <p>Receive great photo by</p>
         <?php echo "$session_time<br>" ?>
-    
+<!--     
         <input type="radio" name="time" value="day"
             <?php echo $session_time === 'day' ? 'checked' : 'no'; ?>
             >Day<br>
@@ -120,7 +120,14 @@
             >Month<br>
         <input type="radio" name="time" value="random"
             <?php echo $session_time === 'random' ? 'checked' : ''; ?>
-            >Random<br>
+            >Random<br> -->
+
+        <select name="time" class="form-control form-control-sm">
+            <option value="day" <?php echo $session_time === 'day' ? 'selected' : ''; ?>>Day</option>
+            <option value="week" <?php echo $session_time === 'week' ? 'selected' : ''; ?>>Week</option>
+            <option value="month" <?php echo $session_time === 'month' ? 'selected' : ''; ?>>Month</option>
+            <option value="random"<?php echo $session_time === 'random' ? 'selected' : ''; ?>>Random</option>
+        </select>
         
         <input type="submit" name="edit" value="Edit">
         
