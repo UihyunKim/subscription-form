@@ -6,16 +6,16 @@
     <h3 class=mt-md-3>account info</h3>
 
     <div class="row mt-md-3">
-        <h4 class="col-sm-4">name</h4>
-        <h5 class="col-sm-8"><?php echo $session_name ?></h5>
+        <h4 class="col-4">name</h4>
+        <h5 class="col-8"><?php echo $session_name ?></h5>
     </div>
     <div class="row">
-        <h4 class="col-sm-4">email</h4>
-        <h5 class="col-sm-8"><?php echo $session_email ?></h5>
+        <h4 class="col-4">email</h4>
+        <h5 class="col-8"><?php echo $session_email ?></h5>
     </div>
     <div class="row">
-        <h4 class="col-sm-4">every</h4>
-        <h5 class="col-sm-8"><?php echo $session_time ?></h5>
+        <h4 class="col-4">every</h4>
+        <h5 class="col-8"><?php echo $session_time ?></h5>
     </div>
 
     <div class="row mt-auto">

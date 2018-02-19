@@ -45,7 +45,7 @@
 </head>
 
 <body class="bg-dark d-flex justify-content-center align-items-center">
-    <div class="container">
+    <div class="container col-lg-7 col-sm-12 test">
         <div class="row h-100">
 
             <!-- left main colon - Background image-->

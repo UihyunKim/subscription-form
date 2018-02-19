@@ -117,8 +117,8 @@
         </div>
         <div class="form-group row">
             <label  for="selectTime" 
-                    class="col-sm-8 col-form-label">Receive photos every</label>
-            <div    class="col-sm-4">
+                    class="col-7 col-form-label">Receive photos every</label>
+            <div    class="col-5">
                 <select name="time" 
                         id="selectTime" 
                         class="form-control" >

@@ -8,8 +8,8 @@
 
 <?php while ($row = $stmt->fetch()): ?>
     <div class="row">
-        <div class="col-sm-4"> <?php echo ucfirst($row->name); ?> </div>
-        <div class="col-sm-8"> <?php echo $row->email; ?> </div>
+        <div class="col-4"> <?php echo ucfirst($row->name); ?> </div>
+        <div class="col-8"> <?php echo $row->email; ?> </div>
     </div>
 <?php endwhile ?>
 

@@ -11,10 +11,21 @@ body p {
   font-family: "Oswald", sans-serif;
 }
 
+@media screen and (max-width: 991px) {
+  body .test {
+    height: 100vh !important;
+  }
+  body .test .main-img {
+    border-radius: 0 !important;
+  }
+  body .test .form-container {
+    border-radius: 0 !important;
+    padding: 15px;
+  }
+}
+
 body .container {
   height: 60%;
-  max-width: 100%;
-  width: 60%;
 }
 
 body .container .main-img {

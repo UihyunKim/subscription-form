@@ -96,8 +96,8 @@
 
             <div class="form-group row">
                 <label  for="name" 
-                        class="col-sm-4 col-form-label">name</label>
-                <div class="col-sm-8">
+                        class="col-4 col-form-label">name</label>
+                <div class="col-8">
                     <input  type="text"
                             id="name" 
                             name="name" 
@@ -106,13 +106,13 @@
                             value="<?php echo isset($session_name) ? $session_name : ''; ?>" 
                             required>
                 </div>
-                <div    class="invalid-feedback col-sm-12">Please fill name</div>
+                <div    class="invalid-feedback col-12">Please fill name</div>
             </div>
         
             <div class="form-group row">
                 <label  for="selectTime" 
-                        class="col-sm-8 col-form-label">Receive photos every</label>
-                <div    class="col-sm-4">
+                        class="col-7 col-form-label">Receive photos every</label>
+                <div    class="col-5">
                     <select name="time" 
                             id="selectTime" 
                             class="form-control" >
