@@ -1,8 +1,4 @@
 <?php
-    echo "Heroku deployed";
-?>
-
-<?php
     session_start();
 
     $session_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
@@ -13,6 +9,7 @@
 ?>
 
 <?php
+// local mysql setup
     $host = 'localhost';
     $user = 'root';
     $password = '123456';
@@ -24,8 +21,7 @@
     // Create a PDO instance
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-
-    ?>
+?>
 
 <?php
     // Dynamic contents
